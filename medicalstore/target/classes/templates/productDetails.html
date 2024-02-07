@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Details</title>
+    <link rel="stylesheet" th:href="@{../css/details.css}">
+</head>
+<body>
+	<nav>
+        <ul>
+			<span sec:authorize="isAuthenticated">
+            <li><a th:href="@{/logout}" >Logout</a></li>
+			</span>
+            <li><a th:href="@{/user-page}">Home</a></li>
+            <li><a th:href="@{/all}">List </a></li>
+            <li><a th:href="@{/addproduct}">Add Product </a></li>
+        </ul>
+    </nav>
+    <div >
+    <h1>Product Details</h1>
+    <div th:if="${productdetails != null}" >
+        <p><strong>Product Name:</strong> <span th:text="${productdetails.name}"></span></p>
+        <p><strong>Product Description:</strong> <span th:text="${productdetails.description}"></span></p>
+        <p><strong>Price:</strong> <span th:text="${productdetails.price}"></span></p>
+        <p><strong>Expiry Date:</strong> <span th:text="${productdetails.expirydate}"></span></p>
+    </div>
+    <div th:if="${productdetails == null}" >
+        <p>Product not found!</p>
+    </div>
+    </div>
+</body>
+</html>
