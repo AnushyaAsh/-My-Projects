@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>JavascriptExam1</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    h1{
+        font-style: italic;
+        font-size:5vw;
+    }
+    label{
+    	font-weight: bold;
+    }
+    input 
+    {
+      width: 100%;
+      border: 1px solid;
+      height: 40px;
+    }
+    select{
+      width: 100%;
+      border: 1px solid;
+      height: 40px;
+    }
+    </style>
+</head>
+<body>
+	<div class="container col-lg-4 col-md-4 col-sm-4 col-4 mt-5 border border-secondary bg-light">
+	<h1 class="text-center">Calculator</h1><br>
+    <label>Number 1:</label>
+    <input type="number" id="input1" step="1"><br><br>
+    <label>Number 2:</label>
+    <input type="number" id="input2" step="1"><br><br>
+
+    <label for="operator">Operator:</label>
+    <select id="operator" class="text-center">
+        <option value="+">Add (+)</option>       
+        <option value="-">Subtract (-)</option>
+        <option value="*">Multiply (*)</option>
+        <option value="/">Divide (/)</option>
+    </select><br><br>
+    <div class="text-center">
+    <button onclick="calculate()" class="btn btn-info btn-circle"><b>=</b></button><br><br>
+    </div>
+    <p id="result" style="font-weight: bold">Result: </p>
+	<script type="text/javascript">
+        var result;
+		function calculate() {
+            var num1 = parseFloat(document.getElementById("input1").value);
+            var num2 = parseFloat(document.getElementById("input2").value);
+            var operator = document.getElementById("operator").value;
+
+            function add(){
+                if (operator=="+") {
+                    result= num1+num2;
+                }
+            }
+            add();
+            function subtract(){
+                if (operator=="-") {
+                    result= num1-num2;
+                }
+            }
+            subtract();
+            function multiply(){
+                if(operator=="*"){
+                    result=num1*num2;
+                }
+            }
+            multiply();
+            function divide() {
+                if (operator=="/") {
+                    result= num1/num2;
+                }
+            }
+            divide();
+            function print() {
+               
+            } document.getElementById("result").innerHTML="Result:"+result;
+            print();    
+        } 
+            
+	</script>
+	</div>
+	
+</body>
+</html>
