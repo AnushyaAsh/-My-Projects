@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>javascriptexam2</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <style type="text/css">
+      body{
+            background-image:url("https://png.pngtree.com/thumb_back/fw800/back_our/20190623/ourmid/pngtree-red-geometric-flat-draw-lottery-promotion-advertising-background-image_247328.jpg");
+            background-size: cover; 
+            background-repeat: no-repeat;
+        }
+    	
+    	.btn{
+    		margin-top: 20px;
+    	}
+    	.winner{
+    		text-align: center; 
+    		color: yellow;
+        font-size:1.5vw;
+        font-weight: bold;
+        margin-top: 20px;
+    	}
+      
+    	.txt{
+    		text-align: center;
+    		font-style: italic;
+    		font-size:3vw;
+    		font-weight: bold;
+    		margin-top: 10px;
+        color: white;
+    	}
+    	.congu{
+    		text-align: center;
+    		font-weight: bold;
+    		font-size:1.5vw;
+        color: white;
+    	}
+    	.modalpopup{
+    		text-align: center;
+    		font-weight: bold;
+    	}
+
+    </style>
+</head>
+<body>
+   
+   <div class="container col-lg-4 col-md-4 col-sm-4 col-4 mt-5 border border-secondary margin">
+	<p class="txt">LOTTERY WINNER</p>
+	<div class="text-center">
+		<button onclick="myResult()" class=" btn btn-primary " data-toggle="modal" data-target="#mymodal" style="font-size:1.5vw">RESULT</button>
+	</div>
+	<div class="modal fade" id="mymodal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-title"><b>Lottery Winner</b></div>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body modalpopup" id="popup"></div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> </div>
+			</div>
+		</div>
+	</div>
+	
+	<p id="demo" class="winner" ></p>
+	<p id="congo" class="congu" ></p>
+	<script type="text/javascript">
+		
+	    function myResult(){
+          var lotnum=["465372","274928","374829","382536","247462","365767","645839"];
+          var i;
+          for (i=0; i<lotnum.length;i++) {
+          	var lotnum2=lotnum[Math.floor(Math.random() * lotnum.length)];
+          	document.getElementById('demo').innerHTML="The winner is:"+lotnum2;
+          	document.getElementById('congo').innerHTML="Congratulations!!";
+          }
+          console.log(lotnum2);    
+          document.getElementById('popup').innerHTML="The winner is:"+lotnum2;
+
+	    }	
+	</script>
+
+</div>
+
+</body>
+</html>
